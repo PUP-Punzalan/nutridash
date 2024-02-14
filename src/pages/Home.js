@@ -1,7 +1,6 @@
 import { useEffect, useState } from "react";
 import supabase from "../config/SupabaseClient";
 import Modal from "../components/Modal";
-import FoodItemCard from "../components/FoodItemCard";
 import FoodItemCardAdd from "../components/FoodItemCardAdd";
 import FoodItemCardAddList from "../components/FoodItemCardList";
 import AddFoodComp from "../components/AddFoodComp";
@@ -53,9 +52,6 @@ const Home = ({ token }) => {
   const [foods, setFoods] = useState([]);
   const [meals, setMeals] = useState([]);
 
-  const [activeOrderButton, setActiveOrderButton] = useState("type");
-  const [activeSortButton, setActiveSortButton] = useState("ascending");
-
   const [orderBy, setOrderBy] = useState("created_at");
   const [ascendingSort, setAscendingSort] = useState(true);
 
@@ -67,10 +63,6 @@ const Home = ({ token }) => {
 
   const openAddMealModal = () => setAddMealModalOpen(true);
   const closeAddMealModal = () => setAddMealModalOpen(false);
-
-  const [userDailyMeals, setUserDailyMeals] = useState([{}]);
-
-  const [mealList, setMealList] = useState([]);
 
   useEffect(() => {
     const getUserData = async () => {
@@ -477,48 +469,6 @@ const Home = ({ token }) => {
             <h5>Meal List</h5>
           </div>
 
-          {/* <div className="meal--categories">
-            <div
-              className={`meal__category ${
-                foodCategory === "Breakfast" ? "active" : ""
-              }`}
-              onClick={() => {
-                setFoodCategory("Breakfast");
-              }}
-            >
-              Breakfast
-            </div>
-            <div
-              className={`meal__category ${
-                foodCategory === "Lunch" ? "active" : ""
-              }`}
-              onClick={() => {
-                setFoodCategory("Lunch");
-              }}
-            >
-              Lunch
-            </div>
-            <div
-              className={`meal__category ${
-                foodCategory === "Dinner" ? "active" : ""
-              }`}
-              onClick={() => {
-                setFoodCategory("Dinner");
-              }}
-            >
-              Dinner
-            </div>
-            <div
-              className={`meal__category ${
-                foodCategory === "Snacks" ? "active" : ""
-              }`}
-              onClick={() => {
-                setFoodCategory("Snacks");
-              }}
-            >
-              Snacks
-            </div>
-          </div> */}
           <div className="date-navigation inner__section">
             {/* <p>{foodCategory}</p> */}
             <button onClick={decrementDate}>
@@ -699,72 +649,7 @@ const Home = ({ token }) => {
               </div>
             </div>
           </div>
-
-          {/* <div className="food-list-container">
-            {filteredFoodData.length !== 0 ? (
-              filteredFoodData.map((food) => (
-                <div key={food.id}>
-                  <ul>
-                    <FoodItemCard food={food.foodItem} />
-                  </ul>
-                </div>
-              ))
-            ) : (
-              <div className="message message-primary">
-                No food for this category and date. Click the "+" button to add
-                food.
-              </div>
-            )}
-          </div> */}
         </div>
-        {/* <div className="home__section">
-          <h5>Suggested Meal</h5>
-          <div className="meals--container">
-            <div className="meal">
-              <div className="meal__intro">
-                <div className="meal__name">
-                  <span className="material-symbols-rounded">eco</span>
-                  <h5>Chicken Adobo</h5>
-                </div>
-                <div className="meal__quantity">
-                  <p>
-                    <span>1</span> serving
-                  </p>
-                  •
-                  <p>
-                    <span>150</span>g
-                  </p>
-                </div>
-              </div>
-              <div className="meal__nutrients">
-                <div className="mini-macro">
-                  <p className="h7">Calories</p>
-                  <p className="mini-macro__grams">
-                    <span>150</span>g
-                  </p>
-                </div>
-                <div className="mini-macro">
-                  <p className="h7">Proteins</p>
-                  <p className="mini-macro__grams">
-                    <span>150</span>g
-                  </p>
-                </div>
-                <div className="mini-macro">
-                  <p className="h7">Carbs</p>
-                  <p className="mini-macro__grams">
-                    <span>150</span>g
-                  </p>
-                </div>
-                <div className="mini-macro">
-                  <p className="h7">Fats</p>
-                  <p className="mini-macro__grams">
-                    <span>150</span>g
-                  </p>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div> */}
       </div>
     </div>
   );

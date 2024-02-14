@@ -3,12 +3,10 @@ import { BrowserRouter, Routes, Route } from "react-router-dom";
 import Hero from "./pages/Hero";
 import Home from "./pages/Home";
 import AddFood from "./pages/AddFood";
-import CreateMeal from "./pages/CreateMeal";
 import SignIn from "./pages/SignIn";
 import SignUp from "./pages/SignUp";
 import Profile from "./pages/Profile";
 import NavBar from "./components/NavBar";
-import Test from "./pages/test";
 
 const App = () => {
   const [token, setToken] = useState(false);
@@ -62,14 +60,7 @@ const App = () => {
         ) : (
           ""
         )}
-        {token ? (
-          <Route
-            path="/create-meal"
-            element={<CreateMeal key={token.user.id} token={token} />}
-          />
-        ) : (
-          ""
-        )}
+
         {token ? (
           <Route
             path="/profile/:id"
@@ -78,8 +69,6 @@ const App = () => {
         ) : (
           ""
         )}
-
-        {/* <Route path="/test" element={<Test />}></Route> */}
       </Routes>
     </BrowserRouter>
   );

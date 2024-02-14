@@ -1,6 +1,5 @@
 import React from "react";
-import { useNavigate } from "react-router-dom/dist/umd/react-router-dom.development";
-import { NavLink } from "react-router-dom/dist/umd/react-router-dom.development";
+import { useNavigate, NavLink } from "react-router-dom";
 
 const NavBar = ({ token }) => {
   const navigate = useNavigate();
@@ -20,22 +19,13 @@ const NavBar = ({ token }) => {
         </div>
         <ul className="navbar__buttons">
           <li>
-            <NavLink
-              className="navbar__button"
-              activeClassName="active"
-              exact
-              to="/home"
-            >
+            <NavLink className="navbar__button" to="/home">
               <span className="material-symbols-rounded responsive">home</span>
               <p className="">Home</p>
             </NavLink>
           </li>
           <li>
-            <NavLink
-              className="navbar__button"
-              activeClassName="active"
-              to="/food-list"
-            >
+            <NavLink className="navbar__button" to="/food-list">
               <span className="material-symbols-rounded responsive">
                 nutrition
               </span>
@@ -43,11 +33,7 @@ const NavBar = ({ token }) => {
             </NavLink>
           </li>
           <li>
-            <NavLink
-              className="navbar__button"
-              activeClassName="active"
-              to="/add-food"
-            >
+            <NavLink className="navbar__button" to="/add-food">
               <span className="material-symbols-rounded responsive">add</span>
               <p className="">Add food</p>
             </NavLink>
@@ -56,7 +42,6 @@ const NavBar = ({ token }) => {
           <li>
             <NavLink
               className="navbar__button"
-              activeClassName="active"
               to={`/profile/${token.user.id}`}
             >
               <span className="material-symbols-rounded responsive">

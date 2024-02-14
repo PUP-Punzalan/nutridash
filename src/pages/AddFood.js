@@ -2,18 +2,18 @@ import React, { useEffect, useState } from "react";
 import { useNavigate } from "react-router-dom";
 import supabase from "../config/SupabaseClient";
 
-const AddFood = () => {
+const AddFood = ({ token }) => {
   const navigate = useNavigate();
 
   const [fetchError, setFetchError] = useState(null);
 
-  const [foodName, setFoodName] = useState(null);
-  const [foodValue, setFoodValue] = useState(null);
+  const [foodName, setFoodName] = useState("");
+  const [foodValue, setFoodValue] = useState("");
   const [foodUnit, setFoodUnit] = useState("Gram");
-  const [foodCalories, setFoodCalories] = useState(null);
-  const [foodProteins, setFoodProteins] = useState(null);
-  const [foodCarbs, setFoodCarbs] = useState(null);
-  const [foodFats, setFoodFats] = useState(null);
+  const [foodCalories, setFoodCalories] = useState("");
+  const [foodProteins, setFoodProteins] = useState("");
+  const [foodCarbs, setFoodCarbs] = useState("");
+  const [foodFats, setFoodFats] = useState("");
   const [foodType, setFoodType] = useState("Vegetable");
 
   const handleSubmit = async (e) => {
@@ -77,7 +77,7 @@ const AddFood = () => {
   }, [foodType, foodUnit]);
 
   return (
-    <div class="">
+    <div className="">
       <div className="main--wrapper">
         <div className="main--header">
           <h4>Add food</h4>
@@ -85,7 +85,7 @@ const AddFood = () => {
         <form className="main--section form--wrapper" onSubmit={handleSubmit}>
           <div className="input-group">
             <label htmlFor="food-name">Food name</label>
-            <div class="input-unit">
+            <div className="input-unit">
               <input
                 type="text"
                 id="food-name"
@@ -97,10 +97,10 @@ const AddFood = () => {
               />
             </div>
           </div>
-          <div class="input-groups">
+          <div className="input-groups">
             <div className="input-group">
               <label htmlFor="food-value">Value</label>
-              <div class="input-unit">
+              <div className="input-unit">
                 <input
                   type="number"
                   step="any"
@@ -115,7 +115,7 @@ const AddFood = () => {
             </div>
             <div className="input-group">
               <label htmlFor="food-unit">Unit</label>
-              <div class="input-unit">
+              <div className="input-unit">
                 <select
                   id="food-unit"
                   onChange={(e) => {
@@ -136,7 +136,7 @@ const AddFood = () => {
             </div>
             <div className="input-group">
               <label htmlFor="food-type">Food type</label>
-              <div class="input-unit">
+              <div className="input-unit">
                 <select
                   id="food-type"
                   value={foodType}
@@ -159,7 +159,7 @@ const AddFood = () => {
           <div className="input-groups">
             <div className="input-group">
               <label htmlFor="food-calories">Calories</label>
-              <div class="input-unit">
+              <div className="input-unit">
                 <input
                   type="number"
                   step="any"
@@ -174,7 +174,7 @@ const AddFood = () => {
             </div>
             <div className="input-group">
               <label htmlFor="food-proteins">Proteins</label>
-              <div class="input-unit">
+              <div className="input-unit">
                 <input
                   type="number"
                   step="any"
@@ -189,7 +189,7 @@ const AddFood = () => {
             </div>
             <div className="input-group">
               <label htmlFor="food-carbs">Carbs</label>
-              <div class="input-unit">
+              <div className="input-unit">
                 <input
                   type="number"
                   step="any"
@@ -204,7 +204,7 @@ const AddFood = () => {
             </div>
             <div className="input-group">
               <label htmlFor="food-fats">Fats</label>
-              <div class="input-unit">
+              <div className="input-unit">
                 <input
                   type="number"
                   step="any"

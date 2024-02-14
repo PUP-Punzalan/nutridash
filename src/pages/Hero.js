@@ -1,6 +1,5 @@
 import React, { useEffect, useState } from "react";
 import supabase from "../config/SupabaseClient";
-import NavBar from "../components/NavBar";
 import FoodItemCard from "../components/FoodItemCard";
 
 const Hero = () => {
@@ -8,9 +7,6 @@ const Hero = () => {
   const [foods, setFoods] = useState([]);
   const [searchQuery, setSearchQuery] = useState("");
   const [filteredFoods, setFilteredFoods] = useState([]);
-
-  const [activeOrderButton, setActiveOrderButton] = useState("type");
-  const [activeSortButton, setActiveSortButton] = useState("ascending");
 
   const [orderBy, setOrderBy] = useState("type");
   const [ascendingSort, setAscendingSort] = useState(true);
@@ -33,8 +29,6 @@ const Hero = () => {
     };
 
     fetchFoods();
-
-    // console.log(ascendingSort);
   }, [orderBy, ascendingSort]);
 
   useEffect(() => {
