@@ -1,0 +1,131 @@
+/*#region NavBar */
+.navbar--wrapper {
+  display: flex;
+  flex-direction: column;
+  max-width: 14rem;
+  min-height: 100dvh;
+  width: 100%;
+  padding: 1rem;
+  border-right: 1px solid var(--clr-neutral-white-200);
+  background-color: var(--clr-neutral-white-50);
+  position: fixed;
+  justify-content: space-between;
+}
+
+.navbar__title,
+.navbar__buttons {
+  padding-block: 0.5rem;
+}
+
+.navbar__buttons {
+  margin-top: 0.5rem;
+  display: flex;
+  flex-direction: column;
+  /* gap: 0.5rem; */
+}
+
+.navbar__button {
+  text-align: left;
+  padding: 0.65rem 0.65rem;
+  width: 100%;
+  display: flex;
+  align-items: center;
+
+  border-radius: 4px;
+  cursor: pointer;
+  transition: background 0.15s ease-in-out;
+}
+
+.navbar__button p {
+  margin-top: 2px;
+  margin-left: 0.4rem;
+  font-size: 0.95rem;
+}
+
+.navbar__button.active {
+  background: var(--clr-blue-500);
+  color: var(--clr-neutral-white-50);
+  font-weight: 600;
+}
+
+.navbar__button:not(.active):not(.logout-button):hover {
+  background: var(--clr-neutral-white-200);
+}
+
+.navbar__button.active:hover {
+  background: var(--clr-blue-600);
+}
+
+.logout-button {
+  color: var(--clr-neutral-white-50);
+  background: #ec4949;
+  font-weight: 600;
+}
+
+.logout-button:hover {
+  background: #de2c2c;
+}
+/*#endregion NavBar */
+
+/*#region Navbar Responsiveness */
+@media (max-width: 1024px) {
+}
+
+@media (max-width: 1200px) {
+}
+
+@media (max-width: 1024px) {
+  .responsive {
+    display: none;
+  }
+
+  .navbar--wrapper {
+    top: 0;
+    left: 0;
+    max-width: none;
+    width: 100%;
+    min-height: auto;
+    max-height: 90px;
+    /* height: 4rem; */
+    flex-direction: row;
+    position: fixed;
+    align-items: center;
+  }
+
+  .navbar__buttons {
+    flex-direction: row;
+    margin-top: 0;
+  }
+
+  .navbar__button {
+    padding: 0.65rem 1rem;
+  }
+
+  .navbar__button p {
+    margin-top: 0;
+    margin-left: 0;
+    font-size: 0.95rem;
+  }
+
+  .logout-button {
+    width: auto !important;
+    padding: 0.65rem !important;
+  }
+
+  .logout-button span {
+    font-size: 1.25rem;
+  }
+}
+
+@media (max-width: 767px) {
+}
+/*#endregion Navbar Responsiveness */
+
+/*#region Navbar Responsiveness */
+/* @media (max-width: 1024px) {
+  BrowserRouter {
+    display: flex;
+    flex-direction: column;
+  }
+} */
+/*#endregion Navbar Responsiveness */
