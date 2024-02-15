@@ -58,7 +58,7 @@ const NavBar = ({ token }) => {
       </div>
       <button onClick={handleLogout} className="button logout-button">
         <span className="material-symbols-rounded">logout</span>
-        <p className="responsive">Log out</p>
+        <p className="responsive-icon">Log out</p>
       </button>
     </div>
   );

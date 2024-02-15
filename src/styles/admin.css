@@ -1,0 +1,20 @@
+.user-list--wrapper,
+.food-list--wrapper {
+  display: grid;
+  gap: 1rem;
+}
+
+.user-list--wrapper {
+  grid-template-columns: repeat(auto-fit, minmax(100px, 1fr));
+}
+
+.user-list--wrapper > *,
+.food-list--wrapper > * {
+  text-overflow: ellipsis;
+  overflow: hidden;
+  white-space: nowrap;
+}
+
+.food-list--wrapper {
+  grid-template-columns: repeat(auto-fit, minmax(75px, 1fr));
+}

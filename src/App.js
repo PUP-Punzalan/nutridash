@@ -7,6 +7,7 @@ import SignIn from "./pages/SignIn";
 import SignUp from "./pages/SignUp";
 import Profile from "./pages/Profile";
 import NavBar from "./components/NavBar";
+import Admin from "./pages/Admin";
 
 const App = () => {
   const [token, setToken] = useState(false);
@@ -40,6 +41,14 @@ const App = () => {
           <Route
             path={"/home"}
             element={<Home key={token.user.id} token={token} />}
+          />
+        ) : (
+          ""
+        )}
+        {token ? (
+          <Route
+            path={"/admin"}
+            element={<Admin key={token.user.id} token={token} />}
           />
         ) : (
           ""

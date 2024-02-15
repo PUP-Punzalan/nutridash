@@ -210,13 +210,14 @@
   .fl-md__intro {
     /* display: grid; */
     /* flex-direction: column; */
-    justify-content: center;
+    justify-content: space-between;
+    flex-direction: row;
 
-    width: 100%;
+    width: 100% !important;
   }
 
   .fl-md__intro > * {
-    width: 100%;
+    width: 100% !important;
   }
 
   .fl-md__intro > *:nth-child(1) {
@@ -230,7 +231,9 @@
   .fl-md__intro > *:nth-child(2) {
     display: flex;
     align-items: center;
+    justify-content: start;
     gap: 0.5rem;
+    width: 100%;
     order: 1;
   }
 
@@ -255,6 +258,19 @@
     gap: 0.5rem;
     padding: 0.5rem;
     margin-top: 1rem;
+  }
+}
+
+@media (max-width: 767px) {
+  .fl-md__intro {
+    flex-direction: column;
+    justify-content: center;
+  }
+
+  .fl-md__intro > * {
+    align-items: center;
+    justify-content: center !important;
+    text-align: center;
   }
 }
 /*#endregion Food List Medium Responsiveness */

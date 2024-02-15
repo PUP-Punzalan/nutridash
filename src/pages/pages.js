@@ -5,5 +5,6 @@ import Home from "./Home";
 import Profile from "./Profile";
 import AddFood from "./AddFood";
 import CreateMeal from "./CreateMeal";
+import Admin from "./Admin";
 
-export { Hero, SignUp, SignIn, Home, Profile, AddFood, CreateMeal };
+export { Hero, SignUp, SignIn, Home, Profile, AddFood, CreateMeal, Admin };

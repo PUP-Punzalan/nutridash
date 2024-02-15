@@ -25,7 +25,7 @@ const FoodItemCardAddList = ({ food, date, category, user }) => {
           {food.foodItem.value} {food.foodItem.unit}
         </div>
         <div className="">
-          <p>{food.foodItem.name}</p>
+          <p className="bold">{food.foodItem.name}</p>
           <p className={"ft-md ft-" + food.foodItem.type}>
             {food.foodItem.type}
           </p>

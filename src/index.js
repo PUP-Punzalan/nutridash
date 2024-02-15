@@ -8,6 +8,7 @@ import "./index.css";
 import "./styles/navbar.css";
 import "./styles/shared.css";
 import "./styles/component.css";
+import "./styles/admin.css";
 
 const root = ReactDOM.createRoot(document.getElementById("root"));
 root.render(

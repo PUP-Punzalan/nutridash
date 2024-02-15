@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import supabase from "../config/SupabaseClient";
 import { Link, useNavigate } from "react-router-dom";
 
@@ -6,6 +6,9 @@ const SignIn = ({ setToken }) => {
   let navigate = useNavigate();
 
   const [formError, setFormError] = useState(null);
+
+  const [isAdmin, setIsAdmin] = useState(false);
+  const [isFetchedData, setIsFetchedData] = useState(false);
 
   const [formData, setFormData] = useState({
     user_email: "",
@@ -38,10 +41,15 @@ const SignIn = ({ setToken }) => {
       if (data) {
         console.log("Success: " + data);
         setFormError(null);
-      }
+        setToken(data);
 
-      setToken(data);
-      navigate("/home");
+        // Redirect to admin page if user is admin
+        if (isAdmin) {
+          navigate("/admin");
+        } else {
+          navigate("/home");
+        }
+      }
     } catch (error) {
       console.log("Error: ", error);
 
@@ -51,12 +59,42 @@ const SignIn = ({ setToken }) => {
     }
   };
 
+  useEffect(() => {
+    const fetchUserData = async () => {
+      try {
+        const { data, error } = await supabase
+          .from("users")
+          .select()
+          .eq("email", formData.user_email)
+          .single();
+
+        if (error) {
+          throw error;
+        }
+
+        if (data) {
+          console.log("Data: ", data);
+          setIsFetchedData(true);
+          if (data.role === "admin") {
+            setIsAdmin(true);
+          } else {
+            setIsAdmin(false);
+          }
+        }
+      } catch (error) {
+        console.error("Error fetching user data:", error.message);
+      }
+    };
+
+    fetchUserData();
+  }, [formData, isFetchedData]);
+
   return (
     <div className="page-section">
       {formError && <p className="error error-primary">{formError}</p>}
 
       <form onSubmit={handleSubmit} className="form-section">
-        <h4 className="form-title">Sign in</h4>
+        <h4 className="form-title">Sign in {isAdmin.toString()}</h4>
 
         <div className="input-field-group">
           <div className="input__label">

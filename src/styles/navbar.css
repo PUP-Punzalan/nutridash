@@ -69,17 +69,21 @@
 .icon-image {
   width: 85px;
   margin-right: 1rem;
+  display: none;
 }
 /*#endregion NavBar */
 
 /*#region Navbar Responsiveness */
-@media (max-width: 1024px) {
-}
-
 @media (max-width: 1200px) {
 }
+@media (max-width: 1024px) {
+}
 
 @media (max-width: 1024px) {
+  .icon-image {
+    display: block;
+  }
+
   .responsive {
     display: none;
   }

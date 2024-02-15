@@ -45,8 +45,10 @@ const FoodItemCardAdd = ({ food, date, category, user }) => {
         <div className="fl-md__intro__section">
           {food.value} {food.unit}
         </div>
-        <p>{food.name}</p>
-        <p className={"ft-md ft-" + food.type}>{food.type}</p>
+        <div>
+          <p className="bold">{food.name}</p>
+          <p className={"ft-md ft-" + food.type}>{food.type}</p>
+        </div>
         <div></div>
       </div>
 
