@@ -14,14 +14,18 @@ const NavBar = ({ token }) => {
   return (
     <div className="navbar--wrapper">
       <div>
-        <div className="responsive navbar__title">
-          <h5 className="">Nutridash</h5>
+        <div className=" navbar__title">
+          <h5 className="responsive-title">Nutridash</h5>
+          <img
+            className="responsive-icon icon-image"
+            src="https://cdn.discordapp.com/attachments/1165639721993646081/1207513498117218375/received_1008473177392327_prev_ui_1.png?ex=65dfeb94&is=65cd7694&hm=13114cc27f4e854134e6228567a08603f9faecb3417279d3e3d4b1b1cedb6918&"
+          ></img>
         </div>
         <ul className="navbar__buttons">
           <li>
             <NavLink className="navbar__button" to="/home">
               <span className="material-symbols-rounded responsive">home</span>
-              <p className="">Home</p>
+              <p className="responsive-icon">Home</p>
             </NavLink>
           </li>
           <li>
@@ -29,13 +33,13 @@ const NavBar = ({ token }) => {
               <span className="material-symbols-rounded responsive">
                 nutrition
               </span>
-              <p className="">Food List</p>
+              <p className="responsive-icon">Food List</p>
             </NavLink>
           </li>
           <li>
             <NavLink className="navbar__button" to="/add-food">
               <span className="material-symbols-rounded responsive">add</span>
-              <p className="">Add food</p>
+              <p className="responsive-icon">Add food</p>
             </NavLink>
           </li>
 
@@ -47,7 +51,7 @@ const NavBar = ({ token }) => {
               <span className="material-symbols-rounded responsive">
                 person
               </span>
-              <p className="">Profile</p>
+              <p className="responsive-icon">Profile</p>
             </NavLink>
           </li>
         </ul>

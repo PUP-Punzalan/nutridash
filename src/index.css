@@ -572,7 +572,7 @@ select {
 .form-section {
   display: flex;
   flex-direction: column;
-  width: calc(100% - 45rem);
+  width: calc(70%);
   padding: 2rem;
 
   background: var(--clr-neutral-white-50);
@@ -733,11 +733,29 @@ select {
     /* width: fit-content; */
     text-align: center;
   }
+
+  .form-section {
+    display: flex;
+    flex-direction: column;
+    width: calc(80%);
+    padding: 2rem;
+  }
 }
 
 @media (max-width: 767px) {
   .main--wrapper {
     padding: 1.5rem;
+  }
+
+  .form-section {
+    width: 90%;
+  }
+
+  .food-list__title-wrapper {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+    align-items: center;
   }
 }
 /*#endregion V2 Main Style Responsiveness */

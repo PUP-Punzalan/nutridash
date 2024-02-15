@@ -65,6 +65,11 @@
 .logout-button:hover {
   background: #de2c2c;
 }
+
+.icon-image {
+  width: 85px;
+  margin-right: 1rem;
+}
 /*#endregion NavBar */
 
 /*#region Navbar Responsiveness */
@@ -79,6 +84,10 @@
     display: none;
   }
 
+  .responsive-title {
+    display: none;
+  }
+
   .navbar--wrapper {
     top: 0;
     left: 0;
@@ -89,6 +98,11 @@
     /* height: 4rem; */
     flex-direction: row;
     position: fixed;
+    align-items: center;
+  }
+
+  .navbar--wrapper > div {
+    display: flex;
     align-items: center;
   }
 
@@ -118,6 +132,13 @@
 }
 
 @media (max-width: 767px) {
+  .responsive-icon {
+    display: none;
+  }
+
+  .responsive {
+    display: block;
+  }
 }
 /*#endregion Navbar Responsiveness */
 

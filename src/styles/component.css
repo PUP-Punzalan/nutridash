@@ -141,6 +141,12 @@
   width: calc(100% / 4);
 }
 
+.fl-md__intro > :nth-child(2) {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
 .fl-md--nutrients {
   width: 100%;
   display: flex;
@@ -240,6 +246,15 @@
 
   h5 {
     font-size: 1.25rem;
+  }
+
+  .button-field {
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 0.5rem;
+    padding: 0.5rem;
+    margin-top: 1rem;
   }
 }
 /*#endregion Food List Medium Responsiveness */
