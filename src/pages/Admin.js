@@ -96,7 +96,7 @@ const Admin = ({ token }) => {
             <p className="bold">Action</p>
           </div>
           {allUsersData.map((user) => (
-            <UserLists key={token.user.id} user={user} />
+            <UserLists key={user.id} user={user} />
           ))}
         </div>
         <div className="main--section">

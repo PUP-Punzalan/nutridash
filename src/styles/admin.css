@@ -15,6 +15,15 @@
   white-space: nowrap;
 }
 
+.user-list--wrapper > input,
+.food-list--wrapper > input,
+.user-list--wrapper > select,
+.food-list--wrapper > select {
+  padding-inline: 0.5rem;
+  /* background: red; */
+  outline: 1px solid var(--clr-neutral-white-200);
+}
+
 .food-list--wrapper {
   grid-template-columns: repeat(auto-fit, minmax(75px, 1fr));
 }

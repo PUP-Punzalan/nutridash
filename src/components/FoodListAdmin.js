@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from "react";
 import supabase from "../config/SupabaseClient";
 
-const FoodListAdmin = ({ food }) => {
+const FoodListAdmin = ({ key, food }) => {
   const [isDataFetched, setIsDataFetched] = useState(false);
   const [foodData, setFoodData] = useState([
     {
@@ -55,9 +55,9 @@ const FoodListAdmin = ({ food }) => {
   const handleDelete = async () => {
     try {
       const { data, error } = await supabase
-        .from("users")
+        .from("foodItem")
         .delete()
-        .eq("id", foodData.food_item_id)
+        .eq("food_item_id", foodData.food_item_id)
         .select();
 
       if (error) {

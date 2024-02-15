@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from "react";
 import supabase from "../config/SupabaseClient";
 
-const UserLists = ({ user }) => {
+const UserLists = ({ key, user }) => {
   const [isDataFetched, setIsDataFetched] = useState(false);
   const [userData, setUserData] = useState([
     {

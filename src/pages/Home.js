@@ -7,8 +7,10 @@ import AddFoodComp from "../components/AddFoodComp";
 import CategorySummary from "../components/CategorySummary";
 import AddMealComp from "../components/AddMealComp";
 import MealCardAdd from "../components/MealCardAdd";
+import { useNavigate } from "react-router-dom";
 
 const Home = ({ token }) => {
+  const navigate = useNavigate();
   const [pageError, setPageError] = useState(null);
   const [userData, setUserData] = useState({
     name: "",
@@ -18,6 +20,7 @@ const Home = ({ token }) => {
     height: "",
     weight: "",
     calorie_required: "",
+    role: "",
   });
 
   const [searchQuery, setSearchQuery] = useState("");
@@ -88,7 +91,11 @@ const Home = ({ token }) => {
             protein_required: data.protein_required,
             carbs_required: data.carbs_required,
             fat_required: data.fat_required,
+            role: data.role,
           });
+          if (userData.role === null) {
+            setUserData({ ...userData, role: "" });
+          }
           setPageError(null);
         }
       } catch (error) {
@@ -408,6 +415,16 @@ const Home = ({ token }) => {
         <div className="main--header">
           <h4>Welcome back, {userData.name} 👋</h4>
           <p>Here's your daily summary of calories and macronutrients.</p>
+          {userData.role === "admin" ? (
+            <button
+              className="button button-admin"
+              onClick={() => {
+                navigate("/admin");
+              }}
+            >
+              Admin View
+            </button>
+          ) : null}
         </div>
 
         <div className="main--section">

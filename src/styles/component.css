@@ -452,6 +452,12 @@
   background: var(--clr-blue-500);
 }
 
+.button-admin {
+  color: var(--clr-neutral-white-50);
+  background: orange;
+  margin-top: 1rem;
+}
+
 .button-warning-01 {
   color: var(--clr-neutral-white-50);
   background: #d74747;

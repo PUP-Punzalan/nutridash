@@ -94,7 +94,7 @@ const SignIn = ({ setToken }) => {
       {formError && <p className="error error-primary">{formError}</p>}
 
       <form onSubmit={handleSubmit} className="form-section">
-        <h4 className="form-title">Sign in {isAdmin.toString()}</h4>
+        <h4 className="form-title">Sign in </h4>
 
         <div className="input-field-group">
           <div className="input__label">
